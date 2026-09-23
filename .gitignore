@@ -1,0 +1,17 @@
+# Python environment and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Downloaded data: recreated by scripts/10_ and 11_
+data/*
+!data/.gitkeep
+
+# Update bundles, backups, Windows/Mac clutter
+*.tar.gz
+*.bak
+*:Zone.Identifier
+.DS_Store
+Thumbs.db

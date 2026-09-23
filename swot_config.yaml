@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------
+# SWOT + gauge configuration -- Athabasca River at Fort McMurray
+#
+# Fill in `reaches` and `gauge_reach` after running
+# scripts/gee_find_reaches.js in the Earth Engine Code Editor.
+# Everything else has a working default.
+# ---------------------------------------------------------------------
+
+gauges:
+  main: "07DA001"        # Athabasca River below Fort McMurray
+  tributary: "07CD001"   # Clearwater River (joins just above the main gauge).
+                         # The fetch script prints the official name --
+                         # confirm it says CLEARWATER before relying on it.
+
+# SWOT science orbit began July 2023.
+start: "2023-07-01"
+end:   "2026-09-30"
+
+# SWOT reach IDs (11 digits, as text). Any order -- scripts sort them
+# by distance from the river mouth. Main stem only, no tributaries.
+reaches:
+  - "82287000101"
+  - "82287000091"
+  - "82287000081"
+  - "82287000071"
+  - "82287000061"
+  - "82287000051"
+  - "82287000041"
+  - "82287000031"
+  - "82287000021"
+  - "82287000011"
+  - "82285000531"
+  - "82285000521"
+  - "82285000511"
+  - "82285000501"
+  - "82285000481"
+  - "82285000471"
+  - "82285000461"
+  - "82285000451"
+  - "82285000441"
+
+# The one reach that contains gauge 07DA001.
+gauge_reach: "82285000531"
+
+# Reaches UPSTREAM of the Clearwater confluence. Flow there is the main
+# gauge minus the Clearwater gauge. Leave empty to ignore.
+upstream_of_tributary:
+  - "82287000101"
+  - "82287000091"
+  - "82287000081"
+  - "82287000071"
+  - "82287000061"
+  - "82287000051"
+  - "82287000041"
+  - "82287000031"
+  - "82287000021"
+  - "82287000011"
+
+# Ice-free months (1 = Jan). The Athabasca is frozen roughly Nov-Apr.
+open_water_months: [5, 6, 7, 8, 9, 10]
+
+# Quality filters. The cleaning script reports how many readings each
+# filter removes, so you can see whether any one is too strict.
+quality:
+  max_reach_q: 1          # 0 good, 1 suspect, 2 degraded, 3 bad
+  max_dark_frac: 0.5      # fraction of the reach too dark to measure
+  require_partial_f_zero: true   # 1 = reach only partly observed
+  max_xovr_cal_q: 1       # crossover calibration quality, 0 good .. 2 bad
+  max_ice_clim_f: 0       # climatological ice flag, 0 = no ice expected
+  max_ice_dyn_f: 0        # observed ice flag, 0 = no ice seen
+  max_wse_u_m: 0.5        # drop readings with height uncertainty above this
+  outlier_mad_z: 4.0      # drop heights this many robust SDs from the reach median
+  river_reaches_only: true      # reach IDs ending in 1 are river; others are lake/dam
+
+# Power
+design_exceedance_pct: 30   # size on the flow exceeded 30% of the time
+efficiency: 0.80
+
+version_d_ids:
+  "82285000441": "82285000111"
+  "82285000451": "82285000121"
+  "82285000461": "82285000131"
+  "82285000471": "82285000141"
+  "82285000481": "82285000151"
+  "82285000501": "82285000171"
+  "82285000511": "82285000181"
+  "82285000521": "82285000191"
+  "82285000531": "82285000201"

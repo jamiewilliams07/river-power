@@ -1,0 +1,193 @@
+{
+  "exceedance_pct": 30.0,
+  "efficiency": 0.8,
+  "settings": {
+    "env_flow_fraction_of_mean": 0.1,
+    "min_turbine_fraction": 0.15,
+    "manning_n": [
+      0.025,
+      0.035,
+      0.045
+    ],
+    "min_head_gradient_m_per_km": 0.5,
+    "min_readings": 30,
+    "max_drop_spread": 0.3,
+    "shortlist_size": 3,
+    "hydrokinetic_reference_ms": 1.5
+  },
+  "upstream_calibration": {
+    "n_sections": 9,
+    "median_err_pct": 8.392125855865498,
+    "median_abs_q30_diff_pct": 3.418612958134369,
+    "rest_median_err_pct": 7.9210905545975745,
+    "rest_median_abs_q30_diff_pct": 3.0782299214099744,
+    "rest_median_backwater_r": -0.05643525569869046,
+    "adjacent": {
+      "role": "at the Clearwater confluence",
+      "reach_id": "82287000011",
+      "n_matched": 55,
+      "n_all": 73,
+      "dist_out_km": 2884.514003,
+      "loo_median_err_pct": 22.29893394707755,
+      "loo_nse": 0.3724307174114341,
+      "q30_gauge_same_dates": 731.2,
+      "q30_swot_same_dates": 650.0010324139367,
+      "q30_diff_pct": -11.104891628290932,
+      "q30_swot_all_dates": 683.1972853173743,
+      "rating": {
+        "a": 0.004361486538449206,
+        "b": 4.994081521707178,
+        "h0": 236.6370130217028
+      },
+      "backwater_r": 0.31315502083383967
+    },
+    "best": {
+      "role": "above the Clearwater (best section)",
+      "reach_id": "82287000091",
+      "n_matched": 81,
+      "n_all": 105,
+      "dist_out_km": 2973.452687,
+      "loo_median_err_pct": 6.6626585789741455,
+      "loo_nse": 0.8957900272654689,
+      "q30_gauge_same_dates": 694.5200004577637,
+      "q30_swot_same_dates": 680.8981705875412,
+      "q30_diff_pct": -1.961330107303486,
+      "q30_swot_all_dates": 824.6212828681079,
+      "rating": {
+        "a": 144.89634130272955,
+        "b": 2.0580993680190693,
+        "h0": 346.5778954924875
+      },
+      "backwater_r": -0.035203834869248135
+    },
+    "error_link": "none"
+  },
+  "calibrations": [
+    {
+      "role": "gauge section",
+      "reach_id": "82285000531",
+      "n_matched": 43,
+      "n_all": 53,
+      "dist_out_km": 2866.380171,
+      "loo_median_err_pct": 6.091911804932601,
+      "loo_nse": 0.9419575521211598,
+      "q30_gauge_same_dates": 790.0,
+      "q30_swot_same_dates": 808.4945457735923,
+      "q30_diff_pct": 2.3410817434927007,
+      "q30_swot_all_dates": 903.365357671506,
+      "rating": {
+        "a": 640.8863975612996,
+        "b": 1.1359665558667185,
+        "h0": 237.59371018363942
+      },
+      "backwater_r": NaN
+    },
+    {
+      "role": "above the Clearwater (best section)",
+      "reach_id": "82287000091",
+      "n_matched": 81,
+      "n_all": 105,
+      "dist_out_km": 2973.452687,
+      "loo_median_err_pct": 6.6626585789741455,
+      "loo_nse": 0.8957900272654689,
+      "q30_gauge_same_dates": 694.5200004577637,
+      "q30_swot_same_dates": 680.8981705875412,
+      "q30_diff_pct": -1.961330107303486,
+      "q30_swot_all_dates": 824.6212828681079,
+      "rating": {
+        "a": 144.89634130272955,
+        "b": 2.0580993680190693,
+        "h0": 346.5778954924875
+      },
+      "backwater_r": -0.035203834869248135
+    },
+    {
+      "role": "at the Clearwater confluence",
+      "reach_id": "82287000011",
+      "n_matched": 55,
+      "n_all": 73,
+      "dist_out_km": 2884.514003,
+      "loo_median_err_pct": 22.29893394707755,
+      "loo_nse": 0.3724307174114341,
+      "q30_gauge_same_dates": 731.2,
+      "q30_swot_same_dates": 650.0010324139367,
+      "q30_diff_pct": -11.104891628290932,
+      "q30_swot_all_dates": 683.1972853173743,
+      "rating": {
+        "a": 0.004361486538449206,
+        "b": 4.994081521707178,
+        "h0": 236.6370130217028
+      },
+      "backwater_r": 0.31315502083383967
+    }
+  ],
+  "design_flow_long_record": {
+    "main": 790.0,
+    "above_tributary": 639.3300025939942,
+    "record_start": "1957-10-01",
+    "record_end": "2025-12-31"
+  },
+  "max_power_diff_pct": 11.104891628290932,
+  "velocity": {
+    "n_values": [
+      0.025,
+      0.035,
+      0.045
+    ],
+    "upstream_range_ms": [
+      1.0636632260438805,
+      1.639926541409367
+    ],
+    "downstream_range_ms": [
+      0.5675018651577901,
+      0.7659442295946336
+    ],
+    "max_froude": 0.4121060617418326
+  },
+  "energy": {
+    "total_GWh_per_yr": 2655.648196869356,
+    "upstream_GWh_per_yr": 2257.8601008351197,
+    "median_capacity_factor": 0.4961162351101237,
+    "years_used": 66
+  },
+  "n_sections": 18,
+  "n_pass": 9,
+  "shortlist": [
+    {
+      "reach_id": "82287000041",
+      "dist_out_km": 2923.480296,
+      "length_km": 10.001031093,
+      "drop_m": 17.399921408747833,
+      "head_gradient_m_per_km": 1.7398127499999998,
+      "power_MW": 87.3034420416131,
+      "energy_GWh_per_yr": 368.9417834805039,
+      "capacity_factor": 0.48241674056510114,
+      "velocity_ms": 1.639926541409367,
+      "hydrokinetic_kW_per_m2": 2.205175651936316
+    },
+    {
+      "reach_id": "82287000051",
+      "dist_out_km": 2933.459812,
+      "length_km": 9.979516604,
+      "drop_m": 14.349151187160668,
+      "head_gradient_m_per_km": 1.4378603449999998,
+      "power_MW": 71.9963188100846,
+      "energy_GWh_per_yr": 304.2543300086908,
+      "capacity_factor": 0.48241674056510114,
+      "velocity_ms": 1.484123726843857,
+      "hydrokinetic_kW_per_m2": 1.6344827033536613
+    },
+    {
+      "reach_id": "82287000081",
+      "dist_out_km": 2963.454425,
+      "length_km": 9.991507601,
+      "drop_m": 10.94726164664612,
+      "head_gradient_m_per_km": 1.09565664,
+      "power_MW": 54.92746778740317,
+      "energy_GWh_per_yr": 232.12186660284425,
+      "capacity_factor": 0.48241674056510125,
+      "velocity_ms": 1.2798215747330568,
+      "hydrokinetic_kW_per_m2": 1.048137563185426
+    }
+  ]
+}

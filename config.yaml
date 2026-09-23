@@ -1,0 +1,54 @@
+# Settings for the discontinued Sentinel width method (docs/sentinel-width-method.md).
+# aoi and gauge_chainage_m must be set for the study reach; the remaining
+# values are reasonable defaults.
+
+ee_project: null           # Google Cloud project ID for Earth Engine
+drive_folder: river_power
+
+# Area of interest as [[[lon, lat], ...]]. It should cover 20-40 km of river
+# including the gauge, but remain tight around the channel, because Otsu
+# thresholding fails when water is only a small fraction of the area
+aoi:
+  coordinates:
+    - - [141.60, 43.30]
+      - [141.90, 43.30]
+      - [141.90, 43.50]
+      - [141.60, 43.50]
+      - [141.60, 43.30]
+  # Placeholder polygon on the Ishikari plain; replace with the study area
+
+date_range:
+  start: "2024-04-01"
+  end:   "2025-11-01"
+
+max_cloud_pct: 20           # gee_separability.js uses 60 (see the note there)
+scale_m: 10
+dem: "JAXA/ALOS/AW3D30/V3_2"
+dem_band: "DSM"
+dem_scale_m: 30
+dem_vertical_sd_m: 5.0      # AW3D30 vertical error (~0.5 for the GSI 5 m lidar DEM)
+dem_nodata: null
+
+# Sentinel-1: use a single relative orbit. With s1_relative_orbit null,
+# 01_fetch_gee.py lists the available orbits so that one can be selected
+s1_orbit_pass: "ASCENDING"
+s1_relative_orbit: null
+
+# Water masking
+mndwi_threshold: 0.0        # standard MNDWI threshold; verify against the imagery
+sar_threshold_db: null      # null = Otsu threshold per scene
+speckle_window: 5           # Lee filter window (pixels)
+
+# Channel geometry
+min_blob_px: 20
+min_branch_px: 10
+reach_spacing_m: 200
+slope_window_m: 1000        # at least 1000 m for a 30 m DEM (see slope.py)
+
+# Hydraulics
+gauge_chainage_m: 12000     # gauge position along the centreline (m); placeholder
+gauge_window_m: 300
+design_exceedance_pct: 30
+efficiency: 0.80
+candidate_reach_m: 2000
+width_noise_m: 10.0         # width noise, ~1 pixel per bank at 10 m
